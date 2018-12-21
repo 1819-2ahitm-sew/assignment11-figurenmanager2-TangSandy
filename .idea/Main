@@ -1,0 +1,105 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int auswahl = 0;
+        int anzahl = 0;
+        Figure[] figureArray = new Figure[1000];
+
+        do {
+            System.out.println();
+            System.out.println("1 - Ouadrat");
+            System.out.println("2 - Rechteck");
+            System.out.println("3 - Ellipse");
+            System.out.println("4 - Augabe aller erstellten Objekte sortiert nach Flaeche");
+            System.out.println("5 - Augabe aller erstellten Objekte sortiert nach Umfang");
+            System.out.println("6 - Beenden");
+            System.out.println(" ");
+            System.out.print("Auswahl: ");
+            auswahl = scanner.nextInt();
+            System.out.println(" ");
+            System.out.println(" ");
+
+
+            switch (auswahl){
+                case 1 : figureArray[anzahl] =  printRechteck();
+                    anzahl++;
+                    break;
+
+                case 2 : figureArray[anzahl] =  printQuadrat();
+                    anzahl++;
+                    break;
+
+                case 3 : figureArray[anzahl] =  printEllipse();
+                    anzahl++;
+                    break;
+
+                case 4 : printFigureArea(figureArray,anzahl);
+                    break;
+            }
+
+        } while (auswahl != 6);
+
+    }
+
+    static void printFigureArea(Figure[] figureArray, int anzahl) {
+        for (int i = 0; i < anzahl ; i++) {
+
+        }
+    }
+
+    static Ellipse printEllipse() {
+        System.out.println("Ellipse");
+        System.out.print("Hauptachse: ");
+        double hauptachse = scanner.nextDouble();
+        System.out.print("Nebenachse: ");
+        double nebenasche = scanner.nextDouble();
+
+        Ellipse ellipse = new Ellipse(hauptachse,nebenasche);
+        ellipse.setHauptachse(hauptachse);
+        ellipse.setNebenachse(nebenasche);
+
+        System.out.println("Flaeche: " + ellipse.flaeche());
+        System.out.println("Umfang: " + ellipse.umfang());
+        System.out.println(" ");
+
+        return ellipse;
+    }
+
+    static Quadrat printQuadrat() {
+        System.out.println("Quadrat");
+        System.out.print("Seite: ");
+        double seite = scanner.nextDouble();
+
+        Quadrat quadrat = new Quadrat(seite);
+        quadrat.setSeite(seite);
+
+        System.out.println("Flaeche: " + quadrat.flaeche());
+        System.out.println("Umfang: " + quadrat.umfang());
+        System.out.println(" ");
+
+        return quadrat;
+    }
+
+    static Rechteck printRechteck() {
+        System.out.println("Rechteck");
+        System.out.print("Länge: ");
+        double laenge = scanner.nextDouble();
+        System.out.print("Breite: ");
+        double breite = scanner.nextDouble();
+
+        Rechteck rechteck = new Rechteck(laenge,breite);
+        rechteck.setLaenge(laenge);
+        rechteck.setBreite(breite);
+
+        System.out.println("Flaeche: " + rechteck.flaeche());
+        System.out.println("Umfang: " + rechteck.umfang());
+        System.out.println(" ");
+
+        return rechteck;
+    }
+
+}

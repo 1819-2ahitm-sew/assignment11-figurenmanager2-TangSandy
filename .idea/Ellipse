@@ -1,0 +1,59 @@
+public class Ellipse extends Figure {
+    private double hauptachse = 0;
+    private double nebenachse = 0;
+    private double linksPunkt = 0;
+    private double rechtsPunkt = 0;
+
+    public double getHauptachse() {
+        return hauptachse;
+    }
+
+    public void setHauptachse(double hauptachse) {
+        this.hauptachse = hauptachse;
+    }
+
+    public double getNebenachse() {
+        return nebenachse;
+    }
+
+    public void setNebenachse(double nebenachse) {
+        this.nebenachse = nebenachse;
+    }
+
+    public double getLinksPunkt() {
+        return linksPunkt;
+    }
+
+    public void setLinksPunkt(double linksPunkt) {
+        this.linksPunkt = linksPunkt;
+    }
+
+    public double getRechtsPunkt() {
+        return rechtsPunkt;
+    }
+
+    public void setRechtsPunkt(double rechtsPunkt) {
+        this.rechtsPunkt = rechtsPunkt;
+    }
+
+    public Ellipse(double hauptachse, double nebenachse) {
+        this.hauptachse = hauptachse;
+        this.nebenachse = nebenachse;
+    }
+
+    public double flaeche() {
+        double flaeche = 0;
+        flaeche = Math.PI * nebenachse * hauptachse;
+        return flaeche;
+    }
+
+    public double umfang() {
+        double umfang = 0;
+        umfang = 2 * Math.PI * Math.sqrt((Math.pow(nebenachse,2) + Math.pow(hauptachse,2)) / 2 );
+        return umfang;
+    }
+
+    public String toString() {
+        return null;
+    }
+}

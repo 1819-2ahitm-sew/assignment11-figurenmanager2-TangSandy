@@ -1,0 +1,53 @@
+public class Quadrat extends Figure {
+    private double seite = 0;
+    private double linksPunkt = 0;
+
+    public double getSeite() {
+        return seite;
+    }
+
+    public void setSeite(double seite) {
+        this.seite = seite;
+    }
+
+    public double getLinksPunkt() {
+        return linksPunkt;
+    }
+
+    public void setLinksPunkt(double linksPunkt) {
+        this.linksPunkt = linksPunkt;
+    }
+
+    public double getRechtsPunkt() {
+        return rechtsPunkt;
+    }
+
+    public void setRechtsPunkt(double rechtsPunkt) {
+        this.rechtsPunkt = rechtsPunkt;
+    }
+
+    private double rechtsPunkt = 0;
+
+    public Quadrat(double laenge) {
+        this.seite = laenge;
+    }
+
+    @Override
+    public double flaeche() {
+        double flaeche = 0;
+        flaeche = seite * seite;
+        return flaeche;
+    }
+
+    @Override
+    public double umfang() {
+        double umfang = 0;
+        umfang = 4 * seite;
+        return umfang;
+    }
+
+    @Override
+    public String toString() {
+        return null;
+    }
+}
